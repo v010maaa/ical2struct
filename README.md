@@ -1,11 +1,59 @@
 # ical2struct
 
-golang package to parse ical to json
+golang package to parse ical to struct
 
-get start
+# Install
 
 ```
-sss
+go get github.com/v010maaa/ical2struct/ics
+```
+
+# Usage
+
+```go
+event_list := []models.Event{
+    {
+        DateStart:   "20220223",
+        DateEnd:     "20220224",
+        Uid:         "1",
+        Description: "English Class",
+        Summary:     "English (not available)",
+    },
+    {
+        DateStart:   "20220228",
+        DateEnd:     "20220301",
+        Uid:         "2",
+        Description: "Japanese",
+        Summary:     "Japanese (reserved)",
+    },
+}
+
+text := ics.ComposeIcs(event_list)
+fmt.Println(text)
+```
+
+```go
+text := `BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+DTEND;VALUE=20220224
+DTSTART;VALUE=20220223
+UID:1
+DESCRIPTION:English Class
+SUMMARY:English (not available)
+END:VEVENT
+BEGIN:VEVENT
+DTEND;VALUE=20220301
+DTSTART;VALUE=20220228
+UID:2
+DESCRIPTION:Japanese
+SUMMARY:Japanese (reserved)
+END:VEVENT
+END:VCALENDAR`
+
+calendar := ics.ParseIcs(text)
+fmt.Printf(calendar.Calscale)
 ```
 
 ```go
@@ -25,3 +73,26 @@ type Event struct {
 }
 
 ```
+
+# Supported property
+
+## Calender
+
+| Prop     | example   |
+| -------- | --------- |
+| VERSION  | 2.0       |
+| CALSCALE | GREGORIAN |
+
+## Event
+
+| Prop        | example   |
+| ----------- | --------- |
+| DTSTART     | 20220224  |
+| DTEND       | 20220223  |
+| UID         | 1         |
+| SUMMARY     | Text text |
+| DESCRIPTION | text text |
+
+# License
+
+[MIT](https://github.com/v010maaa/ical2struct/blob/main/LICENSE)
