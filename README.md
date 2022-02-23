@@ -1,11 +1,13 @@
+[![Go Reference](https://pkg.go.dev/badge/github.com/v010maaa/ical2struct.svg)](https://pkg.go.dev/github.com/v010maaa/ical2struct)
+
 # ical2struct
 
-golang package to convert icals/icalender text to struct
+golang package to convert ICS/ICal text to struct
 
 # Install
 
 ```
-go get github.com/v010maaa/ical2struct/ics
+go get github.com/v010maaa/ical2struct
 ```
 
 # Usage
@@ -73,6 +75,8 @@ type Event struct {
 }
 
 ```
+
+Please check some example [here](https://pkg.go.dev/github.com/v010maaa/ical2struct/ics)
 
 # Supported property
 
