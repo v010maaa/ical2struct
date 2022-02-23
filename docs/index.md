@@ -57,3 +57,5 @@ Please request, if we want to use more props.
 # License
 
 [MIT](https://github.com/v010maaa/ical2struct/blob/main/LICENSE)
+
+<meta name="google-site-verification" content="PnpQheTxB5s_HSy1bY1T_khavRWjDUbd74QdSi2AZxQ" />
