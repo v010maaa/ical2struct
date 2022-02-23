@@ -2,11 +2,11 @@ package test
 
 import (
 	"fmt"
-	"ical2struct/ics"
 	"io/ioutil"
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
+	"github.com/v010maaa/ical2struct/ics"
 )
 
 func TestNomalParse(t *testing.T) {

@@ -2,8 +2,9 @@ package main
 
 import (
   "fmt"
-  "ical2struct/ics"
   "io/ioutil"
+
+  "github.com/v010maaa/ical2struct/ics"
 )
 
 func main() {

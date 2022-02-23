@@ -2,8 +2,9 @@ package ics_test
 
 import (
 	"fmt"
-	"ical2struct/ics"
-	"ical2struct/models"
+
+	"github.com/v010maaa/ical2struct/ics"
+	"github.com/v010maaa/ical2struct/models"
 )
 
 func ExampleComposeIcs() {

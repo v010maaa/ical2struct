@@ -3,8 +3,9 @@ package ics
 import (
     "bufio"
     "bytes"
-    "ical2struct/models"
-    "ical2struct/utils"
+
+    "github.com/v010maaa/ical2struct/models"
+    "github.com/v010maaa/ical2struct/utils"
 )
 
 func ParseIcs(text string) models.Calendar {

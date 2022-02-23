@@ -1,6 +1,6 @@
 package test
 
-import "ical2struct/models"
+import models "github.com/v010maaa/ical2struct/models"
 
 func NoEndEvents() []models.Event {
 	return []models.Event{

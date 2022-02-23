@@ -1,9 +1,10 @@
 package utils
 
 import (
-	"ical2struct/models"
-	"ical2struct/prop"
 	"strings"
+
+	"github.com/v010maaa/ical2struct/models"
+	"github.com/v010maaa/ical2struct/prop"
 )
 
 // FeatKey map feature sentence to field name we defined

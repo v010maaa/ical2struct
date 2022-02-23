@@ -15,9 +15,10 @@ package ics
 
 import (
 	"bytes"
-	"ical2struct/models"
 	"log"
 	"text/template"
+
+	"github.com/v010maaa/ical2struct/models"
 )
 
 const temp_simple = `BEGIN:VCALENDAR
