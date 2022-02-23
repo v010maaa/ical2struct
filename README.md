@@ -2,7 +2,15 @@
 
 # ical2struct
 
-golang package to convert ICS/ICal text to struct
+A minimal iCalendar / ICS parser for Golang.
+
+The functions are the following two:
+
+1. Converting iCalendar / ICS text to a struct
+2. Converting a struct to an ics format
+
+Since this is a project that started the other day, we are looking for friends who will contribute to this project.
+
 
 # Install
 
@@ -79,6 +87,7 @@ type Event struct {
 Please check some example [here](https://pkg.go.dev/github.com/v010maaa/ical2struct/ics)
 
 # Supported property
+Please request, if we want to use more props.
 
 ## Calender
 
