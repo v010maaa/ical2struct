@@ -15,7 +15,7 @@ func (cal *Calendar) SetCalendar(fv FieldValue) {
   case "Calscale":
     cal.Calscale = fv.Value
   default:
-    fmt.Println("Ical2Json not support fieald")
+    fmt.Println("ical2struct not support fieald")
   }
 }
 

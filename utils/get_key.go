@@ -1,8 +1,8 @@
 package utils
 
 import (
-	"ical2json/models"
-	"ical2json/prop"
+	"ical2struct/models"
+	"ical2struct/prop"
 	"strings"
 )
 

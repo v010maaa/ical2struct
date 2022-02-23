@@ -23,6 +23,6 @@ func (ev *Event) SetEvent(fv FieldValue) {
 	case "Summary":
 		ev.Summary = fv.Value
 	default:
-		fmt.Println("Ical2Json not support field")
+		fmt.Println("ical2struct not support field")
 	}
 }

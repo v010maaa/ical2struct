@@ -1,27 +1,10 @@
-/*
-ここはパッケージコメントの最初になるから見出しではないよー
-
-Hで始まり単一行かつ句読点なしかつ前が見出しではないのでこれは見出し
-
-段落段落
-段落段落
-段落段落
-
-次の段落
-次の段落
-
-    整形済みテキスt
-
-次のやつはリンクになるはず。
-https://golang.org/
-*/
 package ics
 
 import (
     "bufio"
     "bytes"
-    "ical2json/models"
-    "ical2json/utils"
+    "ical2struct/models"
+    "ical2struct/utils"
 )
 
 func ParseIcs(text string) models.Calendar {

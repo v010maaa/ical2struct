@@ -1,4 +1,4 @@
-module ical2json
+module ical2struct
 
 go 1.16
 

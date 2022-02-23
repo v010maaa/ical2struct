@@ -1,13 +1,24 @@
+/*
+Package ics convert ics to structures.
+
+Basic rules in ics format are processed using conditions without the use of lexers.
+Currently, it supports only a limited number of properties, but it is a file structure that can be applied to all properties in the future.
+	struct -> icls
+	icls -> struct
+
+Performance and validation haven't been considered yet, but it does provide minimal configuration functionality that can be used to link third-party calendar features such as airbnb.
+Then, it has already started operation at an early stage of MVP and will improve it based on many requests.
+
+https://golang.org/
+*/
 package ics
 
 import (
 	"bytes"
-	"ical2json/models"
+	"ical2struct/models"
 	"log"
 	"text/template"
 )
-
-const templateFile = "template/ics_simple.text.go"
 
 const temp_simple = `BEGIN:VCALENDAR
 VERSION:2.0

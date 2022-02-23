@@ -2,7 +2,7 @@ package test
 
 import (
 	"fmt"
-	"ical2json/ics"
+	"ical2struct/ics"
 	"io/ioutil"
 	"testing"
 
