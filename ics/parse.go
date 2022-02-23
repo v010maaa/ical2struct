@@ -20,39 +20,43 @@ package ics
 import (
     "bufio"
     "bytes"
-    "fmt"
     "ical2json/models"
     "ical2json/utils"
 )
 
-func ParseIcs(text string) {
+func ParseIcs(text string) models.Calendar {
     buf := bytes.NewBufferString(text)
     scanner := bufio.NewScanner(buf)
 
-    calender := models.NewCalender()
+    calendar := models.NewCalender()
+    event_list := []models.Event{}
+    temp_event := models.Event{}
 
+    event_flag := false
     for scanner.Scan() {
-        // event := models.Event{}
-        // property.SetEventJson(scanner.Text())
         line := scanner.Text()
-
-        if fk := utils.HasCalendar(line); fk.Field != "none" {
-            fmt.Println(fk)
-            calender.SetCalendar(fk)
-            continue
-        }
-
-        if fk := utils.HasEventScope(line); fk.Value == "VEVENT" {
-            if fk.Field == "start" {
-                fmt.Println("VVVVVVVVVV._start_.VVVVVVVVVVVV")
-            } else if fk.Field == "end" {
-                fmt.Println("VVVVVVVVVV.end.VVVVVVVVVVVV\n")
+        if event_flag {
+            if fv := utils.HasEvent(line); fv.Field != "none" {
+                temp_event.SetEvent(fv)
+                continue
             }
+        }
+
+        if fv := utils.HasCalendar(line); fv.Field != "none" {
+            calendar.SetCalendar(fv)
             continue
         }
 
-        if fk := utils.HasEvent(line); fk.Field != "none" {
-            fmt.Println(fk)
+        if fv := utils.HasEventScope(line); fv.Value == "VEVENT" {
+            if fv.Field == "End" {
+                event_list = append(event_list, temp_event)
+                event_flag = false
+                temp_event = models.Event{}
+            } else if fv.Field == "Start" {
+                event_flag = true
+            }
         }
     }
+    calendar.SetEventList(event_list)
+    return calendar
 }

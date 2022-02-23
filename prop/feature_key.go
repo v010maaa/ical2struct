@@ -11,17 +11,17 @@ func CalendarFeatKey() featKey {
 
 func EventFeatKey() featKey {
 	return featKey{
-		"DTEND;VALUE=DATE":   "DateEnd",
-		"DTSTART;VALUE=DATE": "DateStart",
-		"DESCRIPTION":        "Description",
-		"SUMMARY":            "Summary",
-		"UID":                "Uid",
+		"DTEND":       "DateEnd",
+		"DTSTART":     "DateStart",
+		"DESCRIPTION": "Description",
+		"SUMMARY":     "Summary",
+		"UID":         "Uid",
 	}
 }
 
 func EventScopeFeatKey() featKey {
 	return featKey{
-		"BEGIN": "start",
-		"END":   "end",
+		"BEGIN": "Start",
+		"END":   "End",
 	}
 }

@@ -5,18 +5,22 @@ import "fmt"
 type Calendar struct {
   Version  string
   Calscale string
-  Event    Event
+  Events   []Event
 }
 
 func (cal *Calendar) SetCalendar(fv FieldValue) {
   switch field := fv.Field; field {
   case "Version":
-    cal.Version = field
+    cal.Version = fv.Value
   case "Calscale":
-    cal.Version = field
+    cal.Calscale = fv.Value
   default:
     fmt.Println("Ical2Json not support fieald")
   }
+}
+
+func (cal *Calendar) SetEventList(el []Event) {
+  cal.Events = el
 }
 
 func NewCalender() Calendar {
