@@ -1,4 +1,4 @@
-module ical2struct
+module github.com/v010maaa/ical2struct
 
 go 1.16
 

@@ -1,6 +1,6 @@
 # ical2struct
 
-golang package to parse ical to struct
+golang package to convert icals/icalender text to struct
 
 # Install
 
